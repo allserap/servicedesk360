@@ -16,24 +16,22 @@ import javax.servlet.http.HttpSession;
  *
  * @author serva
  */
-@WebServlet("/panel") 
-public class PanelServlet extends HttpServlet { 
- 
-    @Override 
-    protected void doGet(HttpServletRequest request, 
-                         HttpServletResponse response)
- throws ServletException, IOException { 
- 
-        HttpSession sesion = request.getSession(false); 
- 
-        if (sesion == null 
-                || sesion.getAttribute("usuarioCorreo") == null) { 
-            response.sendRedirect( 
-                    request.getContextPath() + "/acceso?estado=sesion"); 
-            return; 
-        } 
- 
-        request.getRequestDispatcher("/panel.jsp") 
-               .forward(request, response); 
-    } 
+@WebServlet("/panel")
+public class PanelServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException {
+
+        HttpSession sesion = request.getSession(false);
+        if (sesion == null
+                || sesion.getAttribute("usuarioAutenticado") == null) {
+            response.sendRedirect(
+                    request.getContextPath() + "/acceso?estado=sesion");
+            return;
+        }
+        request.getRequestDispatcher("/panel.jsp")
+                .forward(request, response);
+    }
 }
