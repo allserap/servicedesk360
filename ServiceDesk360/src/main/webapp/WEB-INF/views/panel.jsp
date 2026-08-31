@@ -36,6 +36,11 @@
                     <h2>Reportes</h2>
                     <p>Se incorporarán durante la Unidad 5.</p>
                 </section>
+                <section class="tarjeta-panel">
+                    <h2>Tickets de Soporte</h2>
+                    <p>Gestione sus solicitudes de soporte técnico.</p>
+                    <a href="${pageContext.request.contextPath}/tickets">Gestionar tickets</a>
+                </section>
             </div>
 
             <form action="${pageContext.request.contextPath}/cerrar-sesion" method="post" style="margin-top: 24px;">

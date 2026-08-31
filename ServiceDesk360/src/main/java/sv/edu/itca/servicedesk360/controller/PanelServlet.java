@@ -31,7 +31,6 @@ public class PanelServlet extends HttpServlet {
                     request.getContextPath() + "/acceso?estado=sesion");
             return;
         }
-        request.getRequestDispatcher("/panel.jsp")
-                .forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/panel.jsp").forward(request, response);
     }
 }
